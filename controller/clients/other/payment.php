@@ -24,6 +24,7 @@
                         }
                     }
                     $_SESSION['carts'] = [];
+                    return include_once 'view/clients/home.php';
                 }else{
                     return include_once 'view/clients/checkout.php';
                 }

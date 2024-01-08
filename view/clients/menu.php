@@ -8,7 +8,7 @@
             if($list_menu){
                 foreach($list_menu as $item){
                     echo '
-                    <div class="col-lg-2 col-md-12 mb-4">
+                    <div class="col-lg-3 col-md-12 mb-4">
                         <div class="card">
                             <div class="bg-image hover-overlay d-flex justify-content-center mt-5" data-mdb-ripple-init
                                 data-mdb-ripple-color="light">
@@ -27,7 +27,7 @@
                 }
             }
         ?>
-        <div class="col-lg-2 col-md-12">
+        <!-- <div class="col-lg-2 col-md-12">
             <div class="card">
                 <div class="bg-image hover-overlay d-flex justify-content-center mt-5" data-mdb-ripple-init
                     data-mdb-ripple-color="light">
@@ -117,5 +117,5 @@
                     <p class="card-text text-center">Cà phê</p>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>

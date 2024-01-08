@@ -14,7 +14,7 @@
 
         function showDetalhistory(){
             if($_GET['idhistory']){
-                $user_id = $_SESSION['user_id'];
+                $user_id = $_SESSION['iduser'];
                 $idhistory = (int) $_GET['idhistory'];
                 $sql = "SELECT a.tensp, c.ngaylaphd, b.images, b.topping_size, b.soluong, b.thanhtien 
                 FROM sanpham a JOIN cthd b 

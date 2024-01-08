@@ -25,8 +25,12 @@
                 $size = $this->db->insertData($sql);
             }
             foreach($anh as $item){
+                $uploadDirectory = $_SERVER['DOCUMENT_ROOT'] . '/project/public/media/upload_img/';
+                $targetFilePath = $uploadDirectory . $item['name'];
+                move_uploaded_file($item['tmp'], $targetFilePath);
+                $Iddmh = $this->insertDmhinh($tensp,$item['name']);
                 $sql = "INSERT INTO sp_dmhinh (id_sanpham, hinh_id)
-                VALUES ($newlyInsertedId, $item) ";
+                VALUES ($newlyInsertedId, $Iddmh) ";
                 $dmhinh = $this->db->insertData($sql);
             }
             if($newlyInsertedId){
@@ -72,9 +76,9 @@
                     $size = $this->db->getAllData("SELECT a.idsize, a.tensize, a.giasize FROM size_ a JOIN sp_size b ON a.idsize=b.size_id WHERE id_sanpham=$idsp;");
                     $arr['size'] = is_array($size) ? $size : null;
                     $arr_sp[] = $arr;
-                    include_once 'view/sanpham/list_products.php';
+                    
                 }
-                
+                include_once 'view/sanpham/list_products.php';
                 
             }
             
@@ -124,25 +128,30 @@
 
 
         function delete($id){
-            $images = $this->db->getAllData("SELECT a.duongdan FROM dmhinh a where id = $id");
             $target_dir = $_SERVER['DOCUMENT_ROOT'] . "/project/public/media/upload_img/";
-            $file_to_delete = $target_dir . basename($images[0]['duongdan']);
-            if (file_exists($file_to_delete)) {
-                // Sử dụng hàm unlink để xóa tệp
-                if (unlink($file_to_delete)) {
-                    $sql = "DELETE FROM dmhinh WHERE id = '$id'";
-                    $result = $this->db->deleteData($sql);
-                    if($result){
-                        $msg = "Đã xóa dử liệu";
-                        setcookie('update_msg', $msg, time() + 2, '/'); 
+            $images = $this->db->getAllData("SELECT b.id,b.duongdan FROM sp_dmhinh a JOIN dmhinh b ON a.hinh_id=b.id WHERE id_sanpham = $id");
+            foreach($images as $item){
+                $file_to_delete = $target_dir . basename($item['duongdan']);
+                if (file_exists($file_to_delete)) {
+                    // Sử dụng hàm unlink để xóa tệp
+                    if (unlink($file_to_delete)) {
+                        $idimage=$item['id'];
+                        $sql = "DELETE FROM dmhinh WHERE id = '$idimage'";
+                        $result = $this->db->deleteData($sql);
+                        if($result){
+                            $msg = "Đã xóa dử liệu";
+                            setcookie('update_msg', $msg, time() + 2, '/'); 
+                        }
+                    } else {
+                        echo 'Không thể xóa tệp.';
                     }
-                    $this->chuyentrang("index.php?action=dmhinh&method=get");
                 } else {
-                    echo 'Không thể xóa tệp.';
+                    echo 'Tệp không tồn tại.';
                 }
-            } else {
-                echo 'Tệp không tồn tại.';
             }
+            $sql = "DELETE FROM sanpham WHERE idsp = $id";
+                        $result = $this->db->deleteData($sql);
+            $this->chuyentrang("index.php?action=sanpham&method=get");
             
         }
     
@@ -150,6 +159,24 @@
             header("Location: $url");
             exit();
             return 0;
+        }
+        function insertDmhinh($ten, $duongdan) {
+            $sql = "INSERT INTO dmhinh (ten, duongdan) VALUES ('$ten', '$duongdan')";
+            
+            // Thực hiện câu lệnh INSERT
+            $this->db->execute($sql);
+        
+            // Lấy ID của bản ghi vừa chèn
+            $sqlSelect = "SELECT LAST_INSERT_ID() AS last_id";
+            $result = $this->db->execute($sqlSelect);
+            
+            // Xử lý kết quả
+            if ($result) {
+                $row = $result->fetch_assoc();
+                return $row['last_id'];
+            } else {
+                return null; // Hoặc xử lý lỗi theo ý muốn của bạn
+            }
         }
     }
 ?>

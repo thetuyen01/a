@@ -22,7 +22,7 @@
                                         height="100px" width="100px" alt="">
                                 </a>
                                 <div class="d-flex align-items-center justify-content-center">
-                                    <input   type="radio" name="hinh" class="radioInput" value="'.$dem.'">
+                                    <input   type="radio" name="hinh" class="radioInput" style="display: none;" value="'.$dem.'">
                                 </div>
                             </li>
                             ';
@@ -42,7 +42,7 @@
                                         height="100px" width="100px" alt="">
                                 </a>
                                 <div class="d-flex align-items-center justify-content-center">
-                                    <input   type="radio" name="hinh" class="radioInput" value="'.$dem.'">
+                                    <input   type="radio" name="hinh" class="radioInput" style="display: none;" value="'.$dem.'">
                                 </div>
                             </li>
                             ';

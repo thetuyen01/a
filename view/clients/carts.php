@@ -7,12 +7,11 @@
                         <h5 class="mb-0">Giỏ hàng - <?php echo count($_SESSION['carts'])?> sản phẩm</h5>
                     </div>
                     <div class="card-body">
-
                         <?php 
+                            $total = 0;
                             if($_SESSION['carts']){
                                 $tru='tru';
                                 $cong='cong';
-                                $total = 0;
                                 foreach ($_SESSION['carts'] as $index=>$item) {
                                     $total+=((float)$item['sanpham']['giasp'] + (!empty($item['topping'])? (float)$item['topping'][0]['giatp']:0) +(!empty($item['size'])? (float)$item['size'][0]['giasize']:0));
                                     echo '

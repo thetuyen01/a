@@ -10,9 +10,17 @@
             $menu = $_POST['menu'];
             $topping = $_POST['topping'];
             $size = $_POST['size'];
-            $anh = $_POST['anh'];
-            $sanpham ->createSP($tensp, $giasp, $mtasp, $menu, $topping, $size, $anh);
+            $anh = [];
+            if(isset($_FILES["images"])){
+                $totalFiles = count($_FILES["images"]["name"]);
             
+                for($i=0; $i < $totalFiles; $i++){
+                    $fileName = $_FILES["images"]["name"][$i];
+                    $fileTmpName = $_FILES["images"]["tmp_name"][$i];
+                    $anh[] = ['name'=>$fileName, 'tmp'=>$fileTmpName];
+                }
+            }
+            $sanpham ->createSP($tensp, $giasp, $mtasp, $menu, $topping, $size, $anh);  
         }
         else{
             $sanpham -> showFormAdd();
@@ -40,6 +48,6 @@
         }
     //xóa menu
     }elseif(isset($_GET['method'])&& $_GET['method']=="delete"&&$_GET['idsanpham']){
-       $dmhinh ->delete((int)$_GET['idsanpham']);
+       $sanpham ->delete((int)$_GET['idsanpham']);
     }
 ?>
