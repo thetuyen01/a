@@ -13,7 +13,7 @@
                                 $tru='tru';
                                 $cong='cong';
                                 foreach ($_SESSION['carts'] as $index=>$item) {
-                                    $total+=((float)$item['sanpham']['giasp'] + (!empty($item['topping'])? (float)$item['topping'][0]['giatp']:0) +(!empty($item['size'])? (float)$item['size'][0]['giasize']:0));
+                                    $total+=(((float)$item['sanpham']['giasp'] + (!empty($item['topping'])? (float)$item['topping'][0]['giatp']:0) +(!empty($item['size'])? (float)$item['size'][0]['giasize']:0))*(int)$item['quantity']);
                                     echo '
                                     <hr class="my-4" />
                                     <!-- Single item -->
@@ -55,7 +55,7 @@
                                                 </button>
             
                                                 <div class="form-outline">
-                                                    <input id="form'.$index.'" min="1" name="quantity" value="1" type="number"
+                                                    <input id="form'.$index.'" min="1" name="quantity" value="'.$item['quantity'].'" type="number"
                                                         class="form-control" />
                                                 </div>
             
@@ -155,28 +155,21 @@
                     <div class="card-body">
                         <ul class="list-group list-group-flush">
                             <li
-                                class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
-                                Products
-                                <span>$53.98</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                                Shipping
-                                <span>Gratis</span>
+                                class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+                                <strong>Tổng số lượng sản phẩm :</strong>
+                                <span><strong><?php echo count($_SESSION['carts'])?></strong></span>
                             </li>
                             <li
                                 class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
                                 <div>
-                                    <strong>Total amount</strong>
-                                    <strong>
-                                        <p class="mb-0">(including VAT)</p>
-                                    </strong>
+                                    <strong>Tổng Tiền :</strong>
                                 </div>
                                 <span><strong id="tongtien">$<?php echo $total?></strong></span>
                             </li>
                         </ul>
 
                         <a href="index.php?action=checkout" class="btn btn-primary btn-lg btn-block">
-                            Go to checkout
+                            Tiến hành thanh toán
                         </a>
                     </div>
                 </div>

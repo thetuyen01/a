@@ -24,11 +24,14 @@
                         }
                     }
                     $_SESSION['carts'] = [];
-                    return include_once 'view/clients/home.php';
+                    return $this->chuyentrang();
                 }else{
                     return include_once 'view/clients/checkout.php';
                 }
             }
+        }
+        function chuyentrang(){
+            return header("Location: index.php");
         }
     }
 ?>

@@ -43,20 +43,6 @@
                 ?>
             </select>
         </div>
-        <div class="mb-3">
-            <label for="tenmenu" class="form-label">Ảnh : </label>
-            <select name="anh[]" class="form-select" aria-label="Default select example" multiple>
-                <?php 
-                    if(is_array($result_hinh)){
-                        foreach($result_hinh as $item){
-                            echo '
-                                <option value="'.$item['id'].'">'.$item['ten'].'</option>
-                            ';
-                        }
-                    }
-                ?>
-            </select>
-        </div>
         <div data-mdb-input-init class=" mb-4">
             <label class="form-label" for="customFile">Chọn ảnh menu</label>
             <input type="file" name="images[]" multiple="multiple" class="form-control" id="customFile" />

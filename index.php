@@ -5,6 +5,7 @@
     $menu ->getMenu();
     $header = new Header();
     $header ->getAllMenu();
+    include_once  "./view/header.php";
     if (isset($_GET['action'])){
         include_once 'controller/index.php';
     }else{

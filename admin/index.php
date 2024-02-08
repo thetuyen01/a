@@ -19,6 +19,9 @@
             case 'sanpham':
                 include_once 'router/sanpham.php';
                 break;
+            case 'invoice':
+                include_once 'router/invoice.php';
+                break;
             default:
                 
                 break;

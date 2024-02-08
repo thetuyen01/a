@@ -9,6 +9,7 @@
 
         function showAllhistory(){
             $history = $this->db->getAllHoaDon();
+            $tinhtrang = [1=>"Đang sử lý", 2=>"Đang vận chuyển", 3 =>"Đang trên đường duy chuyển", 4=>"Đã giao thành công"];
             return include_once "view/clients/purchase_history.php";
         }
 

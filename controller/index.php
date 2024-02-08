@@ -48,6 +48,11 @@
                 $forgotpw = new ForGotPw();
                 $forgotpw ->forget();
                 break;
+            case 'checkcode':
+                include_once 'controller/clients/authencation/forgotPw.php';
+                $forgotpw = new ForGotPw();
+                $forgotpw ->check_code();
+                break;
             case 'restpw':
                 include_once 'controller/clients/authencation/forgotPw.php';
                 $forgotpw = new ForGotPw();

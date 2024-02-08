@@ -150,6 +150,29 @@
     <h4 class="mb-5">Sản phẩm liên quan</h4>
     <div class="row">
         <?php  
+        if (is_array($result_dmmenu)){
+            if(count($result_dmmenu) > 0 || is_object($result_dmmenu)){
+                foreach($result_dmmenu as $item){
+                    echo '
+                    <div class="col-md-3 mb-5">
+                        <div class="card">
+                            <div class="bg-image hover-overlay" data-mdb-ripple-init data-mdb-ripple-color="light">
+                                <img src="http://localhost/project/public/media/upload_img/'.$item['duongdan'].'"
+                                    class="img-fluid" />
+                                <a href="index.php?action=menu&dmmenu=ca-phe&idsp='.$item['idsp'].'">
+                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title text-nowrap">'.$item['tensp'].'</h5>
+                                <p class="card-text">'.$item['giasp'].' đ</p>
+                            </div>
+                        </div>
+                    </div>
+                    ';
+                }
+            }  ;
+        };
             // // foreach($arr_sp as $item){
             // //     echo '
             // //     <div class="col-md-3 mb-5 p-2">

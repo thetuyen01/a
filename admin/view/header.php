@@ -133,11 +133,11 @@
 
             <!-- sanpham -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwosp"
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseinvoice"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <span>Danh mục sản phẩm</span>
                 </a>
-                <div id="collapseTwosp" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div id="collapseinvoice" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="index.php?action=sanpham&method=add">Thêm sản phẩm</a>
                         <a class="collapse-item" href="index.php?action=sanpham&method=get">Danh sách sản phẩm</a>
@@ -145,6 +145,21 @@
                 </div>
             </li>
             <!-- end sanpham -->
+
+            <!-- invoice -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwosp"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <span>Danh sách hóa đơn</span>
+                </a>
+                <div id="collapseTwosp" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="index.php?action=invoice&method=add">Thêm sản phẩm</a>
+                        <a class="collapse-item" href="index.php?action=invoice&method=get">Danh sách Hóa đơn</a>
+                    </div>
+                </div>
+            </li>
+            <!-- end invoice -->
 
         </ul>
         <!-- End of Sidebar -->

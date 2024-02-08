@@ -55,6 +55,15 @@ body {
                 </a>
                 <!-- Left links -->
                 <ul class="navbar-nav m-auto ">
+                    <!-- <li class="nav-item">
+                        <a href="" class="nav-link h6 text-black">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link h6 text-black">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link h6 text-black">Contact</a>
+                    </li> -->
                     <?php 
                       
                         foreach ($arr as $item) {

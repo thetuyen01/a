@@ -11,7 +11,7 @@
         
         // Phương thức checklogin
         function getEmail($email){
-            $sql = "SELECT iduser
+            $sql = "SELECT iduser,email
             FROM user_
             WHERE email = '$email';
             ";

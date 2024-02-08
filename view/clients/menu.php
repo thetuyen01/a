@@ -1,5 +1,5 @@
 <div class="container mt-5">
-    <h4 class="text-center mb-5">Menu sản phẩm</h4>
+    <h4 class="text-center mb-5 text-danger">Hôm nay bạn cần gì ?</h4>
     <div class="row">
         <?php 
             include_once "controller/clients/home.php"; 

@@ -25,7 +25,14 @@
             
                     $size = $this->db->getObject("SELECT a.idsize, a.tensize, a.giasize FROM size_ a JOIN sp_size b ON a.idsize=b.size_id WHERE id_sanpham=$id_sp;");
                     $arr['size'] = is_array($size) ? $size : null;
-            
+
+                    // lấy ra danh sách sản phẩm liên quan
+                    $slug_dmmenu = $_GET['dmmenu'];
+                    $sql = "SELECT MIN(c.duongdan) AS duongdan, a.tensp, a.giasp, a.idsp 
+                    FROM dmmenu z JOIN sanpham a ON z.id=a.idmmenu JOIN sp_dmhinh b ON a.idsp = b.id_sanpham 
+                    JOIN dmhinh c ON c.id=b.hinh_id 
+                    WHERE z.slug_dmmenu = '$slug_dmmenu' GROUP BY a.idsp, a.tensp, a.giasp";
+                    $result_dmmenu = $this -> db->getObject($sql);
                     include_once './view/clients/detailCategory.php';
                 } else {
                     include_once './view/errorr.php';
