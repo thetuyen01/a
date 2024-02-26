@@ -14,13 +14,13 @@
             $limit = 8;
             $start = ($page - 1) * $limit;
             $count = $this->CountProduct();
-            $sql = "SELECT MIN(c.duongdan) AS duongdan, a.tensp, a.giasp, a.idsp 
-            FROM sanpham a JOIN sp_dmhinh b ON a.idsp = b.id_sanpham 
+            $sql = "SELECT MIN(c.duongdan) AS duongdan, a.tensp, a.giasp, a.idsp , z.slug_dmmenu
+            FROM dmmenu z JOIN sanpham a ON z.id=a.idmmenu JOIN sp_dmhinh b ON a.idsp = b.id_sanpham 
             JOIN dmhinh c ON c.id=b.hinh_id 
             GROUP BY a.idsp, a.tensp, a.giasp LIMIT $start,$limit";
             if(!empty($timkiem)){
-                $sql = "SELECT MIN(c.duongdan) AS duongdan, a.tensp, a.giasp, a.idsp 
-                FROM sanpham a JOIN sp_dmhinh b ON a.idsp = b.id_sanpham 
+                $sql = "SELECT MIN(c.duongdan) AS duongdan, a.tensp, a.giasp, a.idsp , z.slug_dmmenu
+                FROM dmmenu z JOIN sanpham a ON z.id=a.idmmenu JOIN sp_dmhinh b ON a.idsp = b.id_sanpham 
                 JOIN dmhinh c ON c.id=b.hinh_id 
                 WHERE a.tensp LIKE '%$timkiem%' GROUP BY a.idsp, a.tensp, a.giasp LIMIT $start,$limit";
             }

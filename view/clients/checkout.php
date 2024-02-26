@@ -13,7 +13,6 @@
                                 $qutity = 0;
                                 $total = 0;
                                 foreach ($_SESSION['carts'] as $index=>$item) {
-                                    $total+=((float)$item['sanpham']['giasp'] + (!empty($item['topping'])? (float)$item['topping'][0]['giatp']:0) +(!empty($item['size'])? (float)$item['size'][0]['giasize']:0));
                                     echo '
                                     <hr class="my-4" />
                                     <!-- Single item -->
@@ -57,7 +56,7 @@
                                     <!-- Single item -->
                                     ';
                                     $qutity+=(int)$item['quantity'];
-                                    $total+=((float)$item['sanpham']['giasp'] + (!empty($item['topping'])? (float)$item['topping'][0]['giatp']:0) +(!empty($item['size'])? (float)$item['size'][0]['giasize']:0))*(int)$item['quantity'];
+                                    $total+=((int)$item['sanpham']['giasp'] + (!empty($item['topping'])? (float)$item['topping'][0]['giatp']:0) +(!empty($item['size'])? (float)$item['size'][0]['giasize']:0))*(int)$item['quantity'];
                                 }
                                 }
                         ?>

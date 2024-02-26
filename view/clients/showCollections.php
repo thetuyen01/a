@@ -22,12 +22,12 @@
                                     <div class="bg-image hover-overlay" data-mdb-ripple-init data-mdb-ripple-color="light">
                                         <img src="http://localhost/project/public/media/upload_img/'.$item['duongdan'].'"
                                             class="img-fluid" />
-                                        <a href="index.php?action=menu&dmmenu=ca-phe&idsp='.$item['idsp'].'">
+                                        <a href="index.php?action=menu&dmmenu='.$_GET['dmmenu'].'&idsp='.$item['idsp'].'">
                                             <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                                         </a>
                                     </div>
                                     <div class="card-body">
-                                        <h5 class="card-title text-nowrap fs-6">'.$item['tensp'].'</h5>
+                                        <h5 class="card-title">'.$item['tensp'].'</h5>
                                         <p class="card-text">'.$item['giasp'].' đ</p>
                                     </div>
                                 </div>

@@ -2,124 +2,67 @@
     <h2 class="text-center p-5">Chuyện nhà</h2>
     <div class="container">
         <div class="mb-4">
-            <h3>Coffeeholic</h3>
             <div class="row row-cols-1 row-cols-md-3 g-4">
                 <div class="col">
                     <div class="card h-100 bg-image hover-zoom">
-                        <img src="https://channel.mediacdn.vn/428462621602512896/2023/10/12/photo-1-1697109081307729129869.jpg"
+                        <img src="https://feed.thecoffeehouse.com//content/images/2024/02/APP-NEWS--11-.jpg"
                             class="card-img-top" height="200" width="200" alt="Hollywood Sign on The Hill" />
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">
-                                This is a longer card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.
-                            </p>
+                            <h5 class="card-title">MỞ DEAL RƯỚC LỘC: GIẢM 35% + FREESHIP</h5>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card h-100 bg-image hover-zoom">
-                        <img src="https://channel.mediacdn.vn/428462621602512896/2023/10/12/photo-1-1697109081307729129869.jpg"
+                        <img src="https://feed.thecoffeehouse.com//content/images/2024/02/app-news--10-.jpg"
                             class="card-img-top" height="200" width="200" alt="Palm Springs Road" />
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a short card.</p>
+                            <h5 class="card-title">ĐÓN XUÂN HỨNG KHỞI, NHÀ MỜI DEAL 0 ĐỒNG</h5>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card h-100 bg-image hover-zoom">
-                        <img src="https://channel.mediacdn.vn/428462621602512896/2023/10/12/photo-2-16971090835442064739179.jpg"
+                        <img src="https://feed.thecoffeehouse.com//content/images/2024/02/APP-NEWS--1--1.jpg"
                             class="card-img-top" height="200" width="200" alt="Los Angeles Skyscrapers" />
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
-                                to
-                                additional content.</p>
+                            <h5 class="card-title">MỪNG XUÂN MỚI, TƯNG BỪNG RƯỚC DEAL</h5>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="mb-2">
-            <h3>Coffeeholic</h3>
             <div class="row row-cols-1 row-cols-md-3 g-4">
                 <div class="col">
                     <div class="card h-100 bg-image hover-zoom">
-                        <img src="https://channel.mediacdn.vn/428462621602512896/2023/10/12/photo-1-1697109081307729129869.jpg"
+                        <img src="https://feed.thecoffeehouse.com//content/images/2024/02/app-news--2-.jpg"
                             class="card-img-top" height="200" width="200" alt="Hollywood Sign on The Hill" />
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">
-                                This is a longer card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.
-                            </p>
+                            <h5 class="card-title">CHO TÌNH BẠN MÃI “KEO”: MUA 1 TẶNG 1 TRÀ ĐÀO CAM SẢ</h5>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card h-100 bg-image hover-zoom">
-                        <img src="https://channel.mediacdn.vn/428462621602512896/2023/10/12/photo-1-1697109081307729129869.jpg"
+                        <img src="https://feed.thecoffeehouse.com//content/images/2024/02/app-news--4-.jpg"
                             class="card-img-top" height="200" width="200px" alt="Palm Springs Road" />
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a short card.</p>
+                            <h5 class="card-title">CHAI FRESH TIỆN LỢI, GIÁ CHỈ 0 ĐỒNG</h5>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card h-100 bg-image hover-zoom">
-                        <img src="https://channel.mediacdn.vn/428462621602512896/2023/10/12/photo-2-16971090835442064739179.jpg"
+                        <img src="https://feed.thecoffeehouse.com//content/images/2024/02/APP-NEWS--3--1.jpg"
                             class="card-img-top" height="200" width="200" alt="Los Angeles Skyscrapers" />
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
-                                to
-                                additional content.</p>
+                            <h5 class="card-title">NHÀ FREESHIP DÙ CHỈ 1 LY</h5>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="mb-2">
-            <h3>Coffeeholic</h3>
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                <div class="col">
-                    <div class="card h-100 bg-image hover-zoom">
-                        <img src="https://channel.mediacdn.vn/428462621602512896/2023/10/12/photo-1-1697109081307729129869.jpg"
-                            class="card-img-top" alt="Hollywood Sign on The Hill" />
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">
-                                This is a longer card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 bg-image hover-zoom">
-                        <img src="https://file.hstatic.net/1000075078/article/thecoffeehouse_caphehighlight01_de40c0102a954c50a328f7befcdd82bd_grande.jpg"
-                            class="card-img-top" alt="Palm Springs Road" />
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a short card.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 bg-image hover-zoom">
-                        <img src="https://channel.mediacdn.vn/428462621602512896/2023/10/12/photo-2-16971090835442064739179.jpg"
-                            class="card-img-top" height="200" width="200" alt="Los Angeles Skyscrapers" />
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
-                                to
-                                additional content.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
     </div>
 </div>
