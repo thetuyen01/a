@@ -38,6 +38,7 @@
                         $_SESSION['auth_token'] = $jwtToken;
                         $_SESSION['tenuser'] = $data[0]['tenuser'];
                         $_SESSION['iduser'] = $data[0]['iduser'];
+                        $_SESSION['dc'] = $data[0]['dc'];
                         $this ->chuyentrang();
                     }
                     

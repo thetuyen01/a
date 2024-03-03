@@ -1,7 +1,8 @@
 <?php include_once 'view/header.php';?>
 <div class="container mt-5">
-    <h1 class="text-center mb-2">Thêm sản phẩm</h1>
-    <form method="post" action="index.php?action=sanpham&method=edit&idsanpham=<?php echo $_GET['idsanpham']?>">
+    <h1 class="text-center mb-2">Edit sản phẩm</h1>
+    <form method="post" action="index.php?action=sanpham&method=edit&idsanpham=<?php echo $_GET['idsanpham']?>"
+        enctype="multipart/form-data">
         <div class="mb-3">
             <label for="tenmenu" class="form-label">Tên sản phẩm</label>
             <input type="text" name="tensp" value="<?php echo $arr['sanpham'][0]['tensp']?>" class="form-control">
@@ -43,19 +44,9 @@
                 ?>
             </select>
         </div>
-        <div class="mb-3">
-            <label for="tenmenu" class="form-label">Ảnh : </label>
-            <select name="anh[]" class="form-select" aria-label="Default select example" multiple>
-                <?php 
-                    if(is_array($result_hinh)){
-                        foreach($result_hinh as $item){
-                            echo '
-                                <option value="'.$item['id'].'">'.$item['ten'].'</option>
-                            ';
-                        }
-                    }
-                ?>
-            </select>
+        <div data-mdb-input-init class=" mb-4">
+            <label class="form-label" for="customFile">Chọn ảnh San pham</label>
+            <input type="file" name="images[]" multiple="multiple" class="form-control" id="customFile" />
         </div>
         <div class="mb-3">
             <label for="tenmenu" class="form-label">Size : </label>

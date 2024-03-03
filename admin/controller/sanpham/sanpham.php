@@ -104,21 +104,54 @@
             SET tensp = '$tensp', giasp = $giasp, mota = '$mtasp', idmmenu = $menu
             WHERE idsp = $idsp";
             $newlyInsertedId = $this->db->updateData($sql);
-            foreach($topping as $item){
-                $sql = "INSERT INTO sp_topping (id_sanpham, topping_id)
-                VALUES ($idsp, $item) ";
-                $topping = $this->db->insertData($sql);
+            #chinh sửa ảnh nếu có
+            if (strlen($anh[0]['name']) > 0){
+                $id_hinh = $this->db->getAllData("SELECT hinh_id FROM sp_dmhinh WHERE id_sanpham = $idsp");
+                foreach($id_hinh as $item){
+                    $id_dmhinh = (int) $item['hinh_id'];
+                    $duongdan = $this->db->getAllData("SELECT * FROM dmhinh WHERE id = $id_dmhinh");
+                    $target_dir = $_SERVER['DOCUMENT_ROOT'] . "/project/public/media/upload_img/";
+                    $file_to_delete = $target_dir . basename($duongdan[0]['duongdan']);
+                    if (file_exists($file_to_delete)) {
+                        // Xóa file
+                        if (unlink($file_to_delete)) {
+                            echo "Xóa thanh công";
+                        } else {
+                            echo "Không thể xóa file.";
+                        }
+                    } else {
+                        echo "File không tồn tại.";
+                    }
+                }
+                $this->db->deleteData("DELETE FROM sp_dmhinh WHERE id_sanpham = $idsp");
+                foreach($anh as $item){
+                    $uploadDirectory = $_SERVER['DOCUMENT_ROOT'] . '/project/public/media/upload_img/';
+                    $targetFilePath = $uploadDirectory . $item['name'];
+                    move_uploaded_file($item['tmp'], $targetFilePath);
+                    $Iddmh = $this->insertDmhinh($tensp,$item['name']);
+                    $sql = "INSERT INTO sp_dmhinh (id_sanpham, hinh_id)
+                    VALUES ($idsp, $Iddmh) ";
+                    $dmhinh = $this->db->insertData($sql);
+                }
             }
-            foreach($size as $item){
-                $sql = "INSERT INTO sp_size (id_sanpham, size_id)
-                VALUES ($idsp, $item) ";
-                $size = $this->db->insertData($sql);
+            if ($topping){
+                $this->db->deleteData("DELETE FROM sp_topping WHERE id_sanpham = $idsp");
+                foreach($topping as $item){
+                    $sql = "INSERT INTO sp_topping (id_sanpham, topping_id)
+                    VALUES ($idsp, $item) ";
+                    $topping = $this->db->insertData($sql);
+                }
             }
-            foreach($anh as $item){
-                $sql = "INSERT INTO sp_dmhinh (id_sanpham, hinh_id)
-                VALUES ($idsp, $item) ";
-                $dmhinh = $this->db->insertData($sql);
+            
+            if ($size){
+                $this->db->deleteData("DELETE FROM sp_size WHERE id_sanpham = $idsp");
+                foreach($size as $item){
+                    $sql = "INSERT INTO sp_size (id_sanpham, size_id)
+                    VALUES ($idsp, $item) ";
+                    $size = $this->db->insertData($sql);
+                }
             }
+            
             if($newlyInsertedId){
                 $msg = "Đã tạo dử liệu";
                 setcookie('update_msg', $msg, time() + 2, '/'); 
@@ -150,7 +183,7 @@
                 }
             }
             $sql = "DELETE FROM sanpham WHERE idsp = $id";
-                        $result = $this->db->deleteData($sql);
+            $result = $this->db->deleteData($sql);
             $this->chuyentrang("index.php?action=sanpham&method=get");
             
         }

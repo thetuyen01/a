@@ -108,7 +108,8 @@
             <form style="width: 26rem;" action="index.php?action=payment" method="post">
                 <!-- Name input -->
                 <div data-mdb-input-init class="form-outline mb-4">
-                    <textarea type="text" name="diachi" id="form4Example1" class="form-control"></textarea>
+                    <textarea type="text" name="diachi" id="form4Example1"
+                        class="form-control"><?php if(isset($_SESSION['dc'])){echo $_SESSION['dc'];} ?></textarea>
                     <label class="form-label" for="form4Example1">Nhập địa chỉ nhận hàng</label>
                 </div>
                 <p>Tổng số lượng : <strong><?php echo $qutity ?></strong></p>

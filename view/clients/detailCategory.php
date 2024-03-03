@@ -106,10 +106,10 @@
                         $demtopping = 0;
                         foreach($topping as $item){
                             if($demtopping == 0){
-                                echo '<div class="mb-2"><input id="topping" checked name="topping" type="radio" value="'.$demtopping.'" class=" me-2 mb-2" data-mdb-ripple-init> '.$item['tentp'].' + '.$item['giatp'].'
+                                echo '<div class="mb-2"><input  checked name="topping" type="radio" value="'.$demtopping.'" class=" me-2 mb-2" data-mdb-ripple-init> '.$item['tentp'].' + '.$item['giatp'].'
                                 đ </div>';
                             }else{
-                                echo '<div class="mb-2"><input id="topping" name="topping" type="radio" value="'.$demtopping.'" class=" me-2 mb-2" data-mdb-ripple-init> '.$item['tentp'].' + '.$item['giatp'].'
+                                echo '<div class="mb-2"><input  name="topping" type="radio" value="'.$demtopping.'" class=" me-2 mb-2" data-mdb-ripple-init> '.$item['tentp'].' + '.$item['giatp'].'
                             đ </div>';
                                 
                             }

@@ -10,7 +10,7 @@
 
         // Phương thức thêm dử liệu user
         function insertHoaDon($iduser, $tongtien, $diachi) {
-            $sql = "INSERT INTO hoadon (iduser, tongtien, diachi, ngaylaphd) VALUES ('$iduser', '$tongtien', '$diachi', NOW())";
+            $sql = "INSERT INTO hoadon (iduser, tongtien, diachi, ngaylaphd, tinhtrang) VALUES ('$iduser', '$tongtien', '$diachi', NOW(), 1)";
             
             // Thực hiện câu lệnh INSERT
             $this->db->execute($sql);

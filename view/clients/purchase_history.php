@@ -14,6 +14,7 @@
         <tbody>
             <?php 
                 if ($history){
+                    $trangthai = ["1"=>"Đang sử lý", "2"=>"Đang vận chuyển", "3"=>"Đang trên đường duy chuyển","4","Đã giao thành công"];
                     foreach($history as $index => $item){
                         echo '
                             <tr>
@@ -22,7 +23,7 @@
                                 <td>'.$item['diachi'].'</td>
                                 <td><a href="index.php?action=detailhistory&idhistory='.$item['idhoadon'].'">...</a></td>
                                 <td>$'.$item['tongtien'].'</td>
-                                <td>'.$tinhtrang[$item['tinhtrang']].'</td>
+                                <td>'.$trangthai[$item['tinhtrang']].'</td>
                                 <td>'.$item['ngaylaphd'].'</td>
                             </tr>
                         ';
